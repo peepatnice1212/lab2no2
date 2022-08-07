@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab 2 no 2</title>
+    <style>
+      .textonborder {
+        margin-top: -13px;
+        margin-left: 10px;
+        padding-left: 5px;
+        background-color: white;
+      }
+      .textinborder {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="get">
+      <h2>แบบฟอร์มจองทัวร์</h2>
+      <br />
+      <div style="border: solid; width: 500px">
+        <p class="textonborder" style="width: 80px">ข้อมูลทั่วไป</p>
+        <p class="textinborder">
+          ชื่อ-สกุล: <br />
+          <input
+            type="text"
+            name="ชื่อ-สกุล"
+            placeholder="กรอกชื่อ-สกุล"
+            pattern="[ก-๏][ก-๏\s]+"
+            required
+          />
+          *
+        </p>
+        <p class="textinborder">
+          Email : <br />
+          <input
+            type="email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
+          />
+          *
+        </p>
+        <p class="textinborder">
+          โทรศัพท์ : <br />
+          <input
+            type="tel"
+            name="telephone"
+            value="+66"
+            pattern="\+66([0-9]{9})"
+            required
+          />
+          *
+        </p>
+        <p class="textinborder">
+          ที่อยู่: <br />
+          <textarea cols="45" rows="5" name="ที่อยู่" required></textarea>
+        </p>
+        <p class="textinborder">
+          รหัสไปรษณีย์:
+          <input
+            type="number"
+            name="รหัสไปรษณีย์"
+            max="99999"
+            min="10000"
+            required
+          />
+        </p>
+        <p class="textinborder">
+          รูปผู้จอง :
+          <input type="file" name="รูปผู้จอง" value="Choose file" required />
+        </p>
+      </div>
+      <br />
+      <br />
+      <div style="border: solid; width: 500px">
+        <p class="textonborder" style="width: 110px">ข้อมูลเข้าสู่ระบบ</p>
+        <p class="textinborder">
+          Username: <br />
+          <input
+            type="text"
+            name="username"
+            minlength="8"
+            pattern="\w+"
+            required
+          />
+          <br />
+          <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่ 8 ตัวขึ้นไป</i>
+        </p>
+        <p class="textinborder">
+          Password : <br />
+          <input type="password" name="password" minlength="8" required /><br />
+          <i>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+        </p>
+      </div>
+      <br />
+      <br />
+      <div style="border: solid; width: 500px">
+        <p class="textonborder" style="width: 132px">ข้อมูลทัวร์ที่ต้องการ</p>
+        <p class="textinborder">
+          แพคเก็จทัวร์ :
+          <select name="package tour" required>
+            <option value="">--select--</option>
+            <option value="Thai">Thai</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+          </select>
+        </p>
+        <p class="textinborder">
+          วันที่เดินทาง :
+          <input type="date" name="วันที่เดินทาง" required />
+        </p>
+        <p class="textinborder">
+          จำนวนผู้เดินทาง :
+          <input type="number" name="จำนวนผู้เดินทาง" max="10" required />
+        </p>
+        <p class="textinborder">
+          เน้นการท่องเที่ยวแบบใด? <br />
+          <input
+            type="checkbox"
+            name="รูปแบบการท่องเที่ยว1"
+            value="ชอปปิ้ง"
+          />ชอปปิ้ง <br />
+          <input
+            type="checkbox"
+            name="รูปแบบการท่องเที่ยว2"
+            value="ธรรมชาติ"
+          />ธรรมชาติ <br />
+          <input type="checkbox" name="รูปแบบการท่องเที่ยว3" value="ทะเล" />ทะเล
+          <br />
+        </p>
+      </div>
+      <p>
+        ยอมรับเงื่อนไขและข้อตกลง
+        <input
+          type="radio"
+          name="เงื่อนไขและข้อตกลง"
+          value="I agree"
+          checked
+        />I agree
+        <input type="radio" name="เงื่อนไขและข้อตกลง" value="I disagree" />I
+        disagree
+        <input type="submit" value="จอง" style="margin-left: 20px" />
+      </p>
+    </form>
+  </body>
+</html>
